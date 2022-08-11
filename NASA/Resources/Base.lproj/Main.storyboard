@@ -127,55 +127,33 @@
                                                     <constraint firstAttribute="height" constant="1" id="bMf-ol-bcE"/>
                                                 </constraints>
                                             </view>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-zm-8JU">
-                                                <rect key="frame" x="4" y="87" width="406" height="295"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3V-RF-wvo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="406" height="1000"/>
-                                                        <subviews>
-                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhX-bT-M8n">
-                                                                <rect key="frame" x="0.0" y="0.0" width="396" height="25"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment content="Description Label">
-                                                                        <attributes>
-                                                                            <font key="NSFont" size="18" name="AvenirNext-Medium"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1000" id="9SZ-vL-DJj"/>
-                                                            <constraint firstItem="DhX-bT-M8n" firstAttribute="leading" secondItem="Z3V-RF-wvo" secondAttribute="leading" id="EE9-tX-wJR"/>
-                                                            <constraint firstAttribute="trailing" secondItem="DhX-bT-M8n" secondAttribute="trailing" constant="10" id="eRb-lc-7UD"/>
-                                                            <constraint firstItem="DhX-bT-M8n" firstAttribute="top" secondItem="Z3V-RF-wvo" secondAttribute="top" id="ofU-jg-74V"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Z3V-RF-wvo" secondAttribute="trailing" id="EBv-LC-5Cu"/>
-                                                    <constraint firstItem="Z3V-RF-wvo" firstAttribute="leading" secondItem="HvJ-FQ-jqt" secondAttribute="leading" id="bRh-Ee-cWv"/>
-                                                    <constraint firstItem="Z3V-RF-wvo" firstAttribute="width" secondItem="SuC-zm-8JU" secondAttribute="width" id="bob-74-4We"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Z3V-RF-wvo" secondAttribute="bottom" id="jTm-wg-1a9"/>
-                                                    <constraint firstItem="Z3V-RF-wvo" firstAttribute="top" secondItem="SuC-zm-8JU" secondAttribute="top" id="k41-C5-R08"/>
-                                                </constraints>
-                                                <viewLayoutGuide key="contentLayoutGuide" id="vlh-mD-CRQ"/>
-                                                <viewLayoutGuide key="frameLayoutGuide" id="HvJ-FQ-jqt"/>
-                                            </scrollView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-ED-6w9">
+                                                <rect key="frame" x="0.0" y="91" width="410" height="291"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                        <attributes>
+                                                            <color key="NSColor" systemColor="labelColor"/>
+                                                            <font key="NSFont" size="14" name="Avenir-Light"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="tintColor" systemColor="darkTextColor"/>
                                         <constraints>
-                                            <constraint firstItem="SuC-zm-8JU" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="4" id="9PV-NS-6c9"/>
+                                            <constraint firstAttribute="trailing" secondItem="kM0-ED-6w9" secondAttribute="trailing" id="3ZE-oj-sYU"/>
                                             <constraint firstAttribute="trailing" secondItem="O7Y-KH-2HS" secondAttribute="trailing" constant="8" id="ENT-P9-GPA"/>
                                             <constraint firstItem="O7Y-KH-2HS" firstAttribute="top" secondItem="uA7-kZ-H6P" secondAttribute="bottom" constant="8" id="L0S-BL-txL"/>
-                                            <constraint firstItem="SuC-zm-8JU" firstAttribute="top" secondItem="rXY-mJ-LA6" secondAttribute="bottom" id="Np0-al-0IV"/>
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="O0S-fu-EaT"/>
-                                            <constraint firstAttribute="bottom" secondItem="SuC-zm-8JU" secondAttribute="bottom" id="QIH-Yi-mwZ"/>
                                             <constraint firstItem="O7Y-KH-2HS" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="Xdj-ol-TmX"/>
-                                            <constraint firstAttribute="trailing" secondItem="SuC-zm-8JU" secondAttribute="trailing" id="jET-M9-Jmc"/>
+                                            <constraint firstItem="kM0-ED-6w9" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" id="dfq-xb-ag3"/>
+                                            <constraint firstItem="kM0-ED-6w9" firstAttribute="top" secondItem="rXY-mJ-LA6" secondAttribute="bottom" constant="4" id="gPE-QL-wc1"/>
+                                            <constraint firstAttribute="bottom" secondItem="kM0-ED-6w9" secondAttribute="bottom" id="gUK-5J-KJD"/>
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="top" secondItem="9jw-xV-lII" secondAttribute="top" id="nNj-lP-r7R"/>
                                             <constraint firstAttribute="trailing" secondItem="uA7-kZ-H6P" secondAttribute="trailing" constant="8" id="r5L-UI-7XH"/>
                                             <constraint firstAttribute="trailing" secondItem="rXY-mJ-LA6" secondAttribute="trailing" id="t7i-98-boo"/>
@@ -200,8 +178,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="RqT-0Y-80F" id="kkg-KA-hAb"/>
-                        <outlet property="descriptionLabel" destination="DhX-bT-M8n" id="ZYE-0L-GV2"/>
-                        <outlet property="descriptionLabelHeightConstraint" destination="9SZ-vL-DJj" id="F0t-VF-kXK"/>
+                        <outlet property="descriptionTextView" destination="kM0-ED-6w9" id="77X-uD-YRD"/>
                         <outlet property="nasaIdLabel" destination="uSk-0e-hoX" id="ITB-2O-IZ2"/>
                         <outlet property="photoImageView" destination="Jjt-4v-f6r" id="2KR-sH-jDo"/>
                         <outlet property="stackView" destination="IYO-F3-oEh" id="CQh-Pl-lIc"/>
@@ -239,6 +216,9 @@
     <color key="tintColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="separatorColor">

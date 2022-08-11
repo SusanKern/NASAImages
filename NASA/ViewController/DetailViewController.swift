@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var nasaIdLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!  // TODO:  change this to a TextView so links will be tappable
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!
     
@@ -33,10 +33,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Set height constraint on description field to be actual height needed
-        //   This allows scrolling to scroll to exactly the right point and no further
-        descriptionLabelHeightConstraint.constant = descriptionLabel.frame.height
     }
     
     // MARK: - Initialization
@@ -45,7 +41,7 @@ class DetailViewController: UIViewController {
         guard let item = item else { return }
 
         titleLabel.text = item.imageTitleLabelText
-        descriptionLabel.attributedText = NSAttributedString.textFromHTMLString("18px", HTML: item.imageDescriptionLabelText)
+        descriptionTextView.attributedText = NSAttributedString.textFromHTMLString("18px", HTML: item.imageDescriptionLabelText)
         dateLabel.text = item.imageDateLabelText
         nasaIdLabel.text = item.imageNasaIdLabelText
         photoImageView?.image = image
@@ -77,15 +73,15 @@ extension NSAttributedString {
         return """
         <meta charset=\"UTF-8\">
         <style> 
-        body { font-family: 'Avenir'; font-size: \(fontSize); } 
-        a { font-family: 'Avenir-Medium'; } 
-        b { font-family: 'Avenir-Heavy'; text-color: \(UIColor.blue); } 
-        strong { font-family: 'Avenir-Heavy'; text-color: \(UIColor.blue); } 
+        body { font-family: 'Avenir-Light'; font-size: \(fontSize); } 
+        a { font-family: 'Avenir-Light'; text-color: \(UIColor.blue); } 
+        b { font-family: 'Avenir-Medium'; text-color: \(UIColor.blue); } 
+        strong { font-family: 'Avenir-Medium'; text-color: \(UIColor.blue); } 
         </style>
         """
     }
 
-    static func textFromHTMLString(_ fontSize: String = "17px", HTML: String) -> NSAttributedString? {
+    static func textFromHTMLString(_ fontSize: String = "16px", HTML: String) -> NSAttributedString? {
         let styleString = "\(defaultHTMLTextStyle(fontSize))\(HTML)"
         return NSAttributedString(HTMLString: styleString)
     }
