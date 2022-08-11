@@ -95,16 +95,14 @@
 		1B32B4CE248A712800867F1F /* NASA */ = {
 			isa = PBXGroup;
 			children = (
-				1B32B4CF248A712800867F1F /* AppDelegate.swift */,
-				1B32B4DF248A712900867F1F /* Info.plist */,
+				1B75D8F728A555480080541D /* Application */,
+				1B75D8F828A555780080541D /* Resources */,
 				1B32B50C2491586D00867F1F /* Control */,
 				1B32B5062491534E00867F1F /* ModelLayer */,
 				1B32B4F3248A71A800867F1F /* NetworkLayer */,
-				1B32B4D1248A712800867F1F /* SceneDelegate.swift */,
 				1B32B5072491536100867F1F /* ViewController */,
-				1B32B4DC248A712900867F1F /* LaunchScreen.storyboard */,
-				1B32B4D7248A712800867F1F /* Main.storyboard */,
-				1B32B4DA248A712900867F1F /* Assets.xcassets */,
+				1B75D8F928A555A00080541D /* Utility */,
+				1B32B4DF248A712900867F1F /* Info.plist */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -153,6 +151,32 @@
 				1B32B50D2491588600867F1F /* DataManager.swift */,
 			);
 			path = Control;
+			sourceTree = "<group>";
+		};
+		1B75D8F728A555480080541D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1B32B4CF248A712800867F1F /* AppDelegate.swift */,
+				1B32B4D1248A712800867F1F /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1B75D8F828A555780080541D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B32B4DC248A712900867F1F /* LaunchScreen.storyboard */,
+				1B32B4D7248A712800867F1F /* Main.storyboard */,
+				1B32B4DA248A712900867F1F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1B75D8F928A555A00080541D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
