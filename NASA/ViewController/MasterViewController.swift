@@ -15,8 +15,8 @@ final class MasterViewController: UITableViewController {
     
     // MARK: - Properties
     
-    private var items: [Displayable] = []
-    private var selectedItem: Displayable?
+    private var items: [ImageDisplayable] = []
+    private var selectedItem: ImageDisplayable?
     private var selectedImage: UIImage?
 
     
@@ -47,7 +47,7 @@ final class MasterViewController: UITableViewController {
         }
         
         let item = items[indexPath.row]
-        cell.titleLabel?.text = item.titleLabelText
+        cell.titleLabel?.text = item.imageTitleLabelText
         cell.photoImageView?.image = UIImage(named: "defaultPhoto")
         
         let log = OSLog(subsystem: "com.nasa.app", category: "TablePerformance")
@@ -55,7 +55,7 @@ final class MasterViewController: UITableViewController {
         os_signpost(.begin, log: log, name: "Load Photo", signpostID: signpostID)
 
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageUrl:URL = URL(string: item.photoLink)!
+            let imageUrl:URL = URL(string: item.imagePhotoLink)!
             let imageData:NSData = NSData(contentsOf: imageUrl)!
             let image = UIImage(data: imageData as Data)
             
@@ -99,7 +99,7 @@ extension MasterViewController: UISearchBarDelegate {
         let signpostID = OSSignpostID(log: log)
         os_signpost(.begin, log: log, name: "Perform Search", signpostID: signpostID)
 
-        let updateItems = { (newItems: [Item]?) in
+        let updateItems = { (newItems: [ImageItem]?) in
             if let newItems = newItems {
                 self.items = newItems
                 DispatchQueue.main.async {
@@ -120,7 +120,7 @@ extension MasterViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
         searchBar.resignFirstResponder()
-        items = [Item]()
+        items = [ImageItem]()
         self.tableView.reloadData()
     }
 }

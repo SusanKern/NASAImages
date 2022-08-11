@@ -29,23 +29,23 @@ final class DataManager {
     
     // MARK: - Public methods
     
-    func searchImages(for keywords: [String], completion: @escaping(_ items: [Item]?) -> Void) {
+    func searchImages(for keywords: [String], completion: @escaping(_ items: [ImageItem]?) -> Void) {
         //networkAccess.searchImages(for: keywords, completion: completion)
         
         let combinedKeywords = keywords.joined(separator: "+")
         
-        NetworkEngine.request(endpoint: NASAImagesEndpoint.getSearchResults(searchText: combinedKeywords)) { (result: Result<Wrapper?, Error>) in
+        NetworkEngine.request(endpoint: NASAImagesEndpoint.getSearchResults(searchText: combinedKeywords)) { (result: Result<ImageResponseWrapper?, Error>) in
             switch result {
             case .success(let response):
                 //print("Response: \(response)")
-                if let collection = response?.collection {
-                    if collection.items.count > 0 {
-                        print(collection.items[0].links?[0].href ?? "")
-                        print(collection.items[0].itemData?[0].title ?? "")
-                        print(collection.items[0].itemData?[0].description ?? "")
+                if let collection = response?.imageCollection {
+                    if collection.imageItems.count > 0 {
+                        print(collection.imageItems[0].links?[0].href ?? "")
+                        print(collection.imageItems[0].itemData?[0].title ?? "")
+                        print(collection.imageItems[0].itemData?[0].description ?? "")
                     }
                     
-                    completion(collection.items)
+                    completion(collection.imageItems)
                 }
             case .failure(let error):
                 print(error)

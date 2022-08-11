@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  ImageModel.swift
 //  NASA
 //
 //  Created by Susan Kern on 6/5/20.
@@ -56,36 +56,36 @@ success({
 */
 
 
-// MARK: - Wrapper
+// MARK: - ImageResponseWrapper
 
-struct Wrapper: Codable {
-    let collection: Collection
+struct ImageResponseWrapper: Codable {
+    let imageCollection: ImageCollection
   
     enum CodingKeys: String, CodingKey {
-        case collection
+        case imageCollection = "collection"
     }
 }
 
 
-// MARK: - Collection
+// MARK: - ImageCollection
 
-struct Collection: Codable {
+struct ImageCollection: Codable {
     let href: String?
-    let items: [Item]
+    let imageItems: [ImageItem]
     let version: String?
   
     enum CodingKeys: String, CodingKey {
         case href
-        case items
+        case imageItems = "items"
         case version    
     }
 }
 
 
-// MARK: - Item
+// MARK: - ImageItem
 
-struct Item: Codable {
-    let itemData: [ItemData]?
+struct ImageItem: Codable {
+    let itemData: [ImageItemData]?
     let links: [Link]?
     let href: String?
 
@@ -97,9 +97,9 @@ struct Item: Codable {
 }
 
 
-// MARK: - ItemData
+// MARK: - ImageItemData
 
-struct ItemData: Codable {
+struct ImageItemData: Codable {
     let dateCreated: String?
     let description: String?
     let title: String?
@@ -114,41 +114,33 @@ struct ItemData: Codable {
 }
 
 
-// MARK: - Link
+// MARK: - ImageItem: ImageDisplayable
 
-struct Link: Codable {
-    let href: String?
+/// Implementation of protocol to convert data held in model into form that can be displayed to user
+extension ImageItem: ImageDisplayable {
 
-    enum CodingKeys: String, CodingKey {
-        case href
-    }
-}
-
-
-// MARK: - Item: Displayable
-
-extension Item: Displayable {
-
-    var titleLabelText: String {
+    var imageTitleLabelText: String {
         if let itemData = itemData?[0], let title = itemData.title {
             return title
         }
         return ""
     }
     
-    var photoLink: String {
+    var imagePhotoLink: String {
         if let link = links?[0], let href = link.href {
             return (href)
         }  
         return ""
     }
     
-    var dateLabelText: String {
+    var imageDateLabelText: String {
         if let itemData = itemData?[0], let incomingDateString = itemData.dateCreated {
+            print("date created: \(incomingDateString)")
             // TODO: Explain this next section in comments
             if let isoDate = ISO8601DateFormatter().date(from:incomingDateString), 
                 let GMT = TimeZone(abbreviation: "GMT") {                
                 let prettyDateString = ISO8601DateFormatter.string(from: isoDate, timeZone: GMT, formatOptions: [.withFullDate, .withDashSeparatorInDate])
+                print("date formatted: \(prettyDateString)")
                 return ("Date Taken: \(prettyDateString)")
             } else {
                 return ("Date Taken: \(incomingDateString)")
@@ -157,14 +149,14 @@ extension Item: Displayable {
         return ("")
     }
     
-    var nasaIdLabelText: String {
+    var imageNasaIdLabelText: String {
         if let itemData = itemData?[0], let nasaId = itemData.nasaId {
             return ("NASA ID: \(nasaId)")
         }
         return ("")
     }
     
-    var descriptionLabelText: String {
+    var imageDescriptionLabelText: String {
         if let itemData = itemData?[0], let description = itemData.description {
             return description
         }

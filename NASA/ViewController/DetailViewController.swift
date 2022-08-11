@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabelHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!
     
-    var item: Displayable?
+    var item: ImageDisplayable?
     var image: UIImage?
     
     
@@ -44,10 +44,10 @@ class DetailViewController: UIViewController {
     private func commonInit() {
         guard let item = item else { return }
 
-        titleLabel.text = item.titleLabelText
-        descriptionLabel.attributedText = NSAttributedString.textFromHTMLString("18px", HTML: item.descriptionLabelText)
-        dateLabel.text = item.dateLabelText
-        nasaIdLabel.text = item.nasaIdLabelText
+        titleLabel.text = item.imageTitleLabelText
+        descriptionLabel.attributedText = NSAttributedString.textFromHTMLString("18px", HTML: item.imageDescriptionLabelText)
+        dateLabel.text = item.imageDateLabelText
+        nasaIdLabel.text = item.imageNasaIdLabelText
         photoImageView?.image = image
     }
 }
