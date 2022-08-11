@@ -19,9 +19,11 @@ final class MasterViewController: UITableViewController {
     private var selectedItem: Displayable?
     private var selectedImage: UIImage?
 
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
     
     // MARK: - View Lifecycle
     
@@ -29,6 +31,7 @@ final class MasterViewController: UITableViewController {
         super.viewDidLoad()
         searchBar.delegate = self
     }
+    
     
     // MARK: - UITableViewDataSource
     
@@ -66,6 +69,7 @@ final class MasterViewController: UITableViewController {
         return cell
     }
     
+    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -83,6 +87,7 @@ final class MasterViewController: UITableViewController {
         destinationVC.image = selectedImage
     }
 }
+
 
 // MARK: - UISearchBarDelegate
 
@@ -110,7 +115,6 @@ extension MasterViewController: UISearchBarDelegate {
         }
         
         os_signpost(.end, log: log, name: "Perform Search", signpostID: signpostID)
-
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

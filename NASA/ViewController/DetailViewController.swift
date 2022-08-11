@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
 
 extension NSAttributedString {
 
-    // MARK: Initialization
+    // MARK: - Initialization
 
     convenience init?(HTMLString: String) {
         let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue] as [NSAttributedString.DocumentReadingOptionKey : Any]
@@ -71,7 +71,7 @@ extension NSAttributedString {
     }
 
 
-    // MARK: Helpers
+    // MARK: - Helpers
 
     static func defaultHTMLTextStyle(_ fontSize: String) -> String {
         return """

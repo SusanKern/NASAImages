@@ -58,31 +58,33 @@ success({
 
 // MARK: - Wrapper
 
-struct Wrapper: Decodable {
+struct Wrapper: Codable {
     let collection: Collection
   
-   enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case collection
-  }
+    }
 }
+
 
 // MARK: - Collection
 
-struct Collection: Decodable {
+struct Collection: Codable {
     let href: String?
     let items: [Item]
     let version: String?
   
-   enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case href
         case items
         case version    
-  }
+    }
 }
+
 
 // MARK: - Item
 
-struct Item: Decodable {
+struct Item: Codable {
     let itemData: [ItemData]?
     let links: [Link]?
     let href: String?
@@ -93,9 +95,11 @@ struct Item: Decodable {
         case href
     }
 }
+
+
 // MARK: - ItemData
 
-struct ItemData: Decodable {
+struct ItemData: Codable {
     let dateCreated: String?
     let description: String?
     let title: String?
@@ -109,15 +113,17 @@ struct ItemData: Decodable {
     }
 }
 
+
 // MARK: - Link
 
-struct Link: Decodable {
+struct Link: Codable {
     let href: String?
 
     enum CodingKeys: String, CodingKey {
         case href
     }
 }
+
 
 // MARK: - Item: Displayable
 
@@ -139,7 +145,9 @@ extension Item: Displayable {
     
     var dateLabelText: String {
         if let itemData = itemData?[0], let incomingDateString = itemData.dateCreated {
-            if let isoDate = ISO8601DateFormatter().date(from:incomingDateString), let GMT = TimeZone(abbreviation: "GMT") {                
+            // TODO: Explain this next section in comments
+            if let isoDate = ISO8601DateFormatter().date(from:incomingDateString), 
+                let GMT = TimeZone(abbreviation: "GMT") {                
                 let prettyDateString = ISO8601DateFormatter.string(from: isoDate, timeZone: GMT, formatOptions: [.withFullDate, .withDashSeparatorInDate])
                 return ("Date Taken: \(prettyDateString)")
             } else {

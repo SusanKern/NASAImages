@@ -16,26 +16,40 @@ import Foundation
  */
 final class DataManager {
     
-//    enum NetworkAccessApproach {
-//        case afNetworking, urlSession
-//    }
-    
     // MARK: - Singleton access
     
     static let shared = DataManager()
     
-    // MARK: - Properties
-    
-    private let networkAccess: NetworkAccess = NetworkAccessAFNetworking()
     
     // MARK: - Initialization
     
     private init() {
     }
     
+    
     // MARK: - Public methods
     
     func searchImages(for keywords: [String], completion: @escaping(_ items: [Item]?) -> Void) {
-        networkAccess.searchImages(for: keywords, completion: completion)
+        //networkAccess.searchImages(for: keywords, completion: completion)
+        
+        let combinedKeywords = keywords.joined(separator: "+")
+        
+        NetworkEngine.request(endpoint: NASAImagesEndpoint.getSearchResults(searchText: combinedKeywords)) { (result: Result<Wrapper?, Error>) in
+            switch result {
+            case .success(let response):
+                //print("Response: \(response)")
+                if let collection = response?.collection {
+                    if collection.items.count > 0 {
+                        print(collection.items[0].links?[0].href ?? "")
+                        print(collection.items[0].itemData?[0].title ?? "")
+                        print(collection.items[0].itemData?[0].description ?? "")
+                    }
+                    
+                    completion(collection.items)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

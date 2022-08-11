@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Cell class for displaying an image
 class ImageTableViewCell: UITableViewCell {
     
     //MARK: - Properties

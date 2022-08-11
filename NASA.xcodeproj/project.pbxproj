@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,12 +16,12 @@
 		1B32B4DE248A712900867F1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B32B4DC248A712900867F1F /* LaunchScreen.storyboard */; };
 		1B32B4E9248A712A00867F1F /* NASATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4E8248A712A00867F1F /* NASATests.swift */; };
 		1B32B4F5248A71C400867F1F /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4F4248A71C400867F1F /* Displayable.swift */; };
-		1B32B4F8248AA28F00867F1F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1B32B4F7248AA28F00867F1F /* Alamofire */; };
 		1B32B4FC248AAE0500867F1F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4FB248AAE0500867F1F /* Model.swift */; };
 		1B32B4FE248E7FC500867F1F /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4FD248E7FC500867F1F /* ImageTableViewCell.swift */; };
-		1B32B5092491547000867F1F /* NetworkAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B5082491547000867F1F /* NetworkAccess.swift */; };
-		1B32B50B2491560800867F1F /* NetworkAccessAFNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B50A2491560800867F1F /* NetworkAccessAFNetworking.swift */; };
 		1B32B50E2491588600867F1F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B50D2491588600867F1F /* DataManager.swift */; };
+		1B75D8F228A2D2EF0080541D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F128A2D2EF0080541D /* Endpoint.swift */; };
+		1B75D8F428A2D3180080541D /* NASAImagesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F328A2D3180080541D /* NASAImagesEndpoint.swift */; };
+		1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F528A2D3740080541D /* NetworkEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +50,10 @@
 		1B32B4F4248A71C400867F1F /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		1B32B4FB248AAE0500867F1F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1B32B4FD248E7FC500867F1F /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		1B32B5082491547000867F1F /* NetworkAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAccess.swift; sourceTree = "<group>"; };
-		1B32B50A2491560800867F1F /* NetworkAccessAFNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAccessAFNetworking.swift; sourceTree = "<group>"; };
 		1B32B50D2491588600867F1F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1B75D8F128A2D2EF0080541D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1B75D8F328A2D3180080541D /* NASAImagesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImagesEndpoint.swift; sourceTree = "<group>"; };
+		1B75D8F528A2D3740080541D /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B32B4F8248AA28F00867F1F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +98,8 @@
 				1B32B4CF248A712800867F1F /* AppDelegate.swift */,
 				1B32B4DF248A712900867F1F /* Info.plist */,
 				1B32B50C2491586D00867F1F /* Control */,
-				1B32B5062491534E00867F1F /* Model */,
-				1B32B4F3248A71A800867F1F /* Networking */,
+				1B32B5062491534E00867F1F /* ModelLayer */,
+				1B32B4F3248A71A800867F1F /* NetworkLayer */,
 				1B32B4D1248A712800867F1F /* SceneDelegate.swift */,
 				1B32B5072491536100867F1F /* ViewController */,
 				1B32B4DC248A712900867F1F /* LaunchScreen.storyboard */,
@@ -118,22 +118,23 @@
 			path = NASATests;
 			sourceTree = "<group>";
 		};
-		1B32B4F3248A71A800867F1F /* Networking */ = {
+		1B32B4F3248A71A800867F1F /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				1B32B5082491547000867F1F /* NetworkAccess.swift */,
-				1B32B50A2491560800867F1F /* NetworkAccessAFNetworking.swift */,
+				1B75D8F528A2D3740080541D /* NetworkEngine.swift */,
+				1B75D8F128A2D2EF0080541D /* Endpoint.swift */,
+				1B75D8F328A2D3180080541D /* NASAImagesEndpoint.swift */,
 			);
-			path = Networking;
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
-		1B32B5062491534E00867F1F /* Model */ = {
+		1B32B5062491534E00867F1F /* ModelLayer */ = {
 			isa = PBXGroup;
 			children = (
 				1B32B4F4248A71C400867F1F /* Displayable.swift */,
 				1B32B4FB248AAE0500867F1F /* Model.swift */,
 			);
-			path = Model;
+			path = ModelLayer;
 			sourceTree = "<group>";
 		};
 		1B32B5072491536100867F1F /* ViewController */ = {
@@ -171,7 +172,6 @@
 			);
 			name = NASA;
 			packageProductDependencies = (
-				1B32B4F7248AA28F00867F1F /* Alamofire */,
 			);
 			productName = NASA;
 			productReference = 1B32B4CC248A712800867F1F /* NASA.app */;
@@ -224,7 +224,6 @@
 			);
 			mainGroup = 1B32B4C3248A712800867F1F;
 			packageReferences = (
-				1B32B4F6248AA28F00867F1F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 1B32B4CD248A712800867F1F /* Products */;
 			projectDirPath = "";
@@ -263,13 +262,14 @@
 			files = (
 				1B32B4FE248E7FC500867F1F /* ImageTableViewCell.swift in Sources */,
 				1B32B50E2491588600867F1F /* DataManager.swift in Sources */,
-				1B32B50B2491560800867F1F /* NetworkAccessAFNetworking.swift in Sources */,
 				1B32B4D0248A712800867F1F /* AppDelegate.swift in Sources */,
-				1B32B5092491547000867F1F /* NetworkAccess.swift in Sources */,
+				1B75D8F428A2D3180080541D /* NASAImagesEndpoint.swift in Sources */,
 				1B32B4D2248A712800867F1F /* SceneDelegate.swift in Sources */,
+				1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */,
 				1B32B4D4248A712800867F1F /* MasterViewController.swift in Sources */,
 				1B32B4FC248AAE0500867F1F /* Model.swift in Sources */,
 				1B32B4F5248A71C400867F1F /* Displayable.swift in Sources */,
+				1B75D8F228A2D2EF0080541D /* Endpoint.swift in Sources */,
 				1B32B4D6248A712800867F1F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,25 +537,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1B32B4F6248AA28F00867F1F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1B32B4F7248AA28F00867F1F /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1B32B4F6248AA28F00867F1F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B32B4C4248A712800867F1F /* Project object */;
 }
