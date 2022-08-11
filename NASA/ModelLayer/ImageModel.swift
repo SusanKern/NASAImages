@@ -135,12 +135,11 @@ extension ImageItem: ImageDisplayable {
     
     var imageDateLabelText: String {
         if let itemData = itemData?[0], let incomingDateString = itemData.dateCreated {
-            print("date created: \(incomingDateString)")
-            // TODO: Explain this next section in comments
+            // Dates come in in ISO format, which is not average-user friendly, i.e. 2010-04-21T17:09:38Z
+            // This step creates a much more readable date text, i.e. 2010-04-21
             if let isoDate = ISO8601DateFormatter().date(from:incomingDateString), 
                 let GMT = TimeZone(abbreviation: "GMT") {                
                 let prettyDateString = ISO8601DateFormatter.string(from: isoDate, timeZone: GMT, formatOptions: [.withFullDate, .withDashSeparatorInDate])
-                print("date formatted: \(prettyDateString)")
                 return ("Date Taken: \(prettyDateString)")
             } else {
                 return ("Date Taken: \(incomingDateString)")
