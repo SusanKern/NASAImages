@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Enter keywords for search" showsCancelButton="YES" id="Uug-Yg-BlC">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -142,19 +143,30 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                                             </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eko-0G-6Gi" userLabel="Line View">
+                                                <rect key="frame" x="0.0" y="381" width="410" height="1"/>
+                                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                                <color key="tintColor" systemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="ims-ey-3FD"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="tintColor" systemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="kM0-ED-6w9" secondAttribute="trailing" id="3ZE-oj-sYU"/>
                                             <constraint firstAttribute="trailing" secondItem="O7Y-KH-2HS" secondAttribute="trailing" constant="8" id="ENT-P9-GPA"/>
+                                            <constraint firstItem="Eko-0G-6Gi" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" id="GMs-HS-184"/>
                                             <constraint firstItem="O7Y-KH-2HS" firstAttribute="top" secondItem="uA7-kZ-H6P" secondAttribute="bottom" constant="8" id="L0S-BL-txL"/>
+                                            <constraint firstAttribute="bottom" secondItem="Eko-0G-6Gi" secondAttribute="bottom" id="MJ5-WZ-VJc"/>
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="O0S-fu-EaT"/>
                                             <constraint firstItem="O7Y-KH-2HS" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="Xdj-ol-TmX"/>
                                             <constraint firstItem="kM0-ED-6w9" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" id="dfq-xb-ag3"/>
                                             <constraint firstItem="kM0-ED-6w9" firstAttribute="top" secondItem="rXY-mJ-LA6" secondAttribute="bottom" id="gPE-QL-wc1"/>
-                                            <constraint firstAttribute="bottom" secondItem="kM0-ED-6w9" secondAttribute="bottom" id="gUK-5J-KJD"/>
+                                            <constraint firstAttribute="bottom" secondItem="kM0-ED-6w9" secondAttribute="bottom" id="kI9-te-fBh"/>
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="top" secondItem="9jw-xV-lII" secondAttribute="top" id="nNj-lP-r7R"/>
+                                            <constraint firstAttribute="trailing" secondItem="Eko-0G-6Gi" secondAttribute="trailing" id="ooh-vk-HXd"/>
                                             <constraint firstAttribute="trailing" secondItem="uA7-kZ-H6P" secondAttribute="trailing" constant="8" id="r5L-UI-7XH"/>
                                             <constraint firstAttribute="trailing" secondItem="rXY-mJ-LA6" secondAttribute="trailing" id="t7i-98-boo"/>
                                             <constraint firstItem="rXY-mJ-LA6" firstAttribute="top" secondItem="O7Y-KH-2HS" secondAttribute="bottom" constant="8" id="uCx-K8-CGR"/>
