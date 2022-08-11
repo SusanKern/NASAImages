@@ -23,6 +23,7 @@
 		1B75D8F428A2D3180080541D /* NASAImagesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F328A2D3180080541D /* NASAImagesEndpoint.swift */; };
 		1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F528A2D3740080541D /* NetworkEngine.swift */; };
 		1B75D8FD28A58C740080541D /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8FC28A58C740080541D /* LinkModel.swift */; };
+		1B75D8FF28A591950080541D /* UIView+SAK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8FE28A591950080541D /* UIView+SAK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		1B75D8F328A2D3180080541D /* NASAImagesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImagesEndpoint.swift; sourceTree = "<group>"; };
 		1B75D8F528A2D3740080541D /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		1B75D8FC28A58C740080541D /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
+		1B75D8FE28A591950080541D /* UIView+SAK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SAK.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		1B75D8F928A555A00080541D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1B75D8FE28A591950080541D /* UIView+SAK.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				1B32B4FE248E7FC500867F1F /* ImageTableViewCell.swift in Sources */,
 				1B32B50E2491588600867F1F /* DataManager.swift in Sources */,
 				1B32B4D0248A712800867F1F /* AppDelegate.swift in Sources */,
+				1B75D8FF28A591950080541D /* UIView+SAK.swift in Sources */,
 				1B75D8F428A2D3180080541D /* NASAImagesEndpoint.swift in Sources */,
 				1B32B4D2248A712800867F1F /* SceneDelegate.swift in Sources */,
 				1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */,
