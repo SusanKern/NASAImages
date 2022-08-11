@@ -128,7 +128,7 @@
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-ED-6w9">
-                                                <rect key="frame" x="0.0" y="91" width="410" height="291"/>
+                                                <rect key="frame" x="0.0" y="87" width="410" height="295"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -152,7 +152,7 @@
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="O0S-fu-EaT"/>
                                             <constraint firstItem="O7Y-KH-2HS" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" constant="8" id="Xdj-ol-TmX"/>
                                             <constraint firstItem="kM0-ED-6w9" firstAttribute="leading" secondItem="9jw-xV-lII" secondAttribute="leading" id="dfq-xb-ag3"/>
-                                            <constraint firstItem="kM0-ED-6w9" firstAttribute="top" secondItem="rXY-mJ-LA6" secondAttribute="bottom" constant="4" id="gPE-QL-wc1"/>
+                                            <constraint firstItem="kM0-ED-6w9" firstAttribute="top" secondItem="rXY-mJ-LA6" secondAttribute="bottom" id="gPE-QL-wc1"/>
                                             <constraint firstAttribute="bottom" secondItem="kM0-ED-6w9" secondAttribute="bottom" id="gUK-5J-KJD"/>
                                             <constraint firstItem="uA7-kZ-H6P" firstAttribute="top" secondItem="9jw-xV-lII" secondAttribute="top" id="nNj-lP-r7R"/>
                                             <constraint firstAttribute="trailing" secondItem="uA7-kZ-H6P" secondAttribute="trailing" constant="8" id="r5L-UI-7XH"/>

@@ -24,6 +24,7 @@
 		1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8F528A2D3740080541D /* NetworkEngine.swift */; };
 		1B75D8FD28A58C740080541D /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8FC28A58C740080541D /* LinkModel.swift */; };
 		1B75D8FF28A591950080541D /* UIView+SAK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D8FE28A591950080541D /* UIView+SAK.swift */; };
+		1B75D90128A59CB90080541D /* NSAttributedString+SAK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B75D90028A59CB90080541D /* NSAttributedString+SAK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		1B75D8F528A2D3740080541D /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		1B75D8FC28A58C740080541D /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 		1B75D8FE28A591950080541D /* UIView+SAK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SAK.swift"; sourceTree = "<group>"; };
+		1B75D90028A59CB90080541D /* NSAttributedString+SAK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+SAK.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				1B75D8FE28A591950080541D /* UIView+SAK.swift */,
+				1B75D90028A59CB90080541D /* NSAttributedString+SAK.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				1B75D8F428A2D3180080541D /* NASAImagesEndpoint.swift in Sources */,
 				1B32B4D2248A712800867F1F /* SceneDelegate.swift in Sources */,
 				1B75D8F628A2D3740080541D /* NetworkEngine.swift in Sources */,
+				1B75D90128A59CB90080541D /* NSAttributedString+SAK.swift in Sources */,
 				1B32B4D4248A712800867F1F /* MasterViewController.swift in Sources */,
 				1B32B4FC248AAE0500867F1F /* ImageModel.swift in Sources */,
 				1B32B4F5248A71C400867F1F /* ImageDisplayable.swift in Sources */,

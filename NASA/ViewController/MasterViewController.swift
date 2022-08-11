@@ -55,8 +55,8 @@ final class MasterViewController: UITableViewController {
         os_signpost(.begin, log: log, name: "Load Photo", signpostID: signpostID)
 
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageUrl:URL = URL(string: item.imagePhotoLink)!
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageUrl:URL = URL(string: item.imagePhotoLink)!  
+            let imageData:NSData = NSData(contentsOf: imageUrl)! // TODO can crash here
             let image = UIImage(data: imageData as Data)
             
             DispatchQueue.main.async {
@@ -108,7 +108,7 @@ extension MasterViewController: UISearchBarDelegate {
             }
         }
         
-        let searchKeywords = criteria.components(separatedBy: " ")  // TODO Add sanitize method for input string
+        let searchKeywords = criteria.components(separatedBy: " ")
         
         DispatchQueue.global(qos: .userInitiated).async { 
             DataManager.shared.searchImages(for: searchKeywords, completion: updateItems)

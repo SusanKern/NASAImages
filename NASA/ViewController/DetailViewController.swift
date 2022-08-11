@@ -41,48 +41,9 @@ class DetailViewController: UIViewController {
         guard let item = item else { return }
 
         titleLabel.text = item.imageTitleLabelText
-        descriptionTextView.attributedText = NSAttributedString.textFromHTMLString("18px", HTML: item.imageDescriptionLabelText)
+        descriptionTextView.attributedText = NSAttributedString.textFromHTMLString(HTML: item.imageDescriptionLabelText)
         dateLabel.text = item.imageDateLabelText
         nasaIdLabel.text = item.imageNasaIdLabelText
         photoImageView?.image = image
-    }
-}
-
-// TODO:  Move this out to a general place
-
-extension NSAttributedString {
-
-    // MARK: - Initialization
-
-    convenience init?(HTMLString: String) {
-        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue] as [NSAttributedString.DocumentReadingOptionKey : Any]
-        do {
-            try self.init(data: HTMLString.data(using: String.Encoding.utf8)!,
-                          options: options,
-                          documentAttributes: nil)
-        } catch let error as NSError {
-            print("\(error.description)")
-            return nil
-        }
-    }
-
-
-    // MARK: - Helpers
-
-    static func defaultHTMLTextStyle(_ fontSize: String) -> String {
-        return """
-        <meta charset=\"UTF-8\">
-        <style> 
-        body { font-family: 'Avenir-Light'; font-size: \(fontSize); } 
-        a { font-family: 'Avenir-Light'; text-color: \(UIColor.blue); } 
-        b { font-family: 'Avenir-Medium'; text-color: \(UIColor.blue); } 
-        strong { font-family: 'Avenir-Medium'; text-color: \(UIColor.blue); } 
-        </style>
-        """
-    }
-
-    static func textFromHTMLString(_ fontSize: String = "16px", HTML: String) -> NSAttributedString? {
-        let styleString = "\(defaultHTMLTextStyle(fontSize))\(HTML)"
-        return NSAttributedString(HTMLString: styleString)
     }
 }
