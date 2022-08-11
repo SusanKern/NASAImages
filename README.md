@@ -8,4 +8,3 @@ Fun app to experiment with networking and mapping JSON responses
 - ReST communication with NASA web server
 - Mapping of JSON responses to objects using Codable
 - Use of Displayable protocol to keep model manipulation out of view controllers
-- Use of os.signpost framework to measure performance

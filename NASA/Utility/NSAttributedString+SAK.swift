@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Extension to provide conversion from HTML to an attributed string that can be presented in a label or text field
 extension NSAttributedString {
 
     // MARK: - Initialization

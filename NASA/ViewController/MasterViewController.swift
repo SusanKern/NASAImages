@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
-import os.signpost
 
 final class MasterViewController: UITableViewController {
     
@@ -49,10 +46,6 @@ final class MasterViewController: UITableViewController {
         let item = items[indexPath.row]
         cell.titleLabel?.text = item.imageTitleLabelText
         cell.photoImageView?.image = UIImage(named: "defaultPhoto")
-        
-        let log = OSLog(subsystem: "com.nasa.app", category: "TablePerformance")
-        let signpostID = OSSignpostID(log: log)
-        os_signpost(.begin, log: log, name: "Load Photo", signpostID: signpostID)
 
         DispatchQueue.global(qos: .userInitiated).async {
             let imageUrl:URL = URL(string: item.imagePhotoLink)!  
@@ -64,8 +57,6 @@ final class MasterViewController: UITableViewController {
             }
         }
         
-        os_signpost(.end, log: log, name: "Load Photo", signpostID: signpostID)
-
         return cell
     }
     
@@ -94,10 +85,6 @@ final class MasterViewController: UITableViewController {
 extension MasterViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let criteria = searchBar.text else { return }
-        
-        let log = OSLog(subsystem: "com.nasa.app", category: "TablePerformance")
-        let signpostID = OSSignpostID(log: log)
-        os_signpost(.begin, log: log, name: "Perform Search", signpostID: signpostID)
 
         let updateItems = { (newItems: [ImageItem]?) in
             if let newItems = newItems {
@@ -113,8 +100,6 @@ extension MasterViewController: UISearchBarDelegate {
         DispatchQueue.global(qos: .userInitiated).async { 
             DataManager.shared.searchImages(for: searchKeywords, completion: updateItems)
         }
-        
-        os_signpost(.end, log: log, name: "Perform Search", signpostID: signpostID)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
