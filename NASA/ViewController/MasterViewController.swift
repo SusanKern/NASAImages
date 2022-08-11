@@ -47,14 +47,16 @@ final class MasterViewController: UITableViewController {
         cell.titleLabel?.text = item.imageTitleLabelText
         cell.photoImageView?.image = UIImage(named: "defaultPhoto")
 
+        // Go out and get the image from the provided link. Use a background dispatch queue for this.
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageUrl:URL = URL(string: item.imagePhotoLink)!  
-            let imageData:NSData = NSData(contentsOf: imageUrl)! // TODO can crash here
-            let image = UIImage(data: imageData as Data)
-            
-            DispatchQueue.main.async {
-                cell.photoImageView?.image = image
-            }
+            if let imageUrl = URL(string: item.imagePhotoLink),
+               let imageData:NSData = NSData(contentsOf: imageUrl),
+               let image = UIImage(data: imageData as Data) {
+                // Switch back to the main dispatch queue for presentation in the UI
+                DispatchQueue.main.async {
+                    cell.photoImageView?.image = image
+                }                
+            } 
         }
         
         return cell
