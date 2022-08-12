@@ -27,6 +27,12 @@ final class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        // Put image in background of table view
+        let imageView = UIImageView(image: UIImage(named: "space"))
+        imageView.alpha = 0.2
+        imageView.contentMode = .scaleAspectFill
+        tableView.backgroundView = imageView
     }
     
     
