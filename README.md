@@ -1,5 +1,7 @@
 # NASAImages
-Fun app to experiment with networking and mapping JSON responses
+Fun app to experiment with networking and mapping JSON responses. 
+
+This app connects with the public API provided by NASA and makes use of the "search by keyword" feature. Documentation of the API is found [here](https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf).
 
 ## Demonstrates
 

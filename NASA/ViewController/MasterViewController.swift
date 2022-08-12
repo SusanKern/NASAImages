@@ -88,26 +88,27 @@ extension MasterViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let criteria = searchBar.text else { return }
 
-        let updateItems = { (newItems: [ImageItem]?) in
+        let updateItems = { [weak self] (newItems: [ImageItem]?) in
             if let newItems = newItems {
-                self.items = newItems
+                self?.items = newItems
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             }
         }
         
+        // Find the separate words in the search bar and create an array of them
         let searchKeywords = criteria.components(separatedBy: " ")
         
         DispatchQueue.global(qos: .userInitiated).async { 
-            DataManager.shared.searchImages(for: searchKeywords, completion: updateItems)
+            DataAccessManager.shared.searchImages(for: searchKeywords, completion: updateItems)
         }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
         searchBar.resignFirstResponder()
-        items = [ImageItem]()
+        self.items = [ImageItem]()
         self.tableView.reloadData()
     }
 }

@@ -14,7 +14,6 @@ class NetworkEngine {
     /// - Parameters:
     ///     - endpoint: the endpoint to make the HTTP request against
     ///     - completion: the JSON response converted to the provided Codable object if successful, or failure otherwise
-    
     class func request<T: Codable>(endpoint: Endpoint, completion: @escaping (Result<T, Error>) -> ()) {
         
         // Assemble URL from endpoint components
