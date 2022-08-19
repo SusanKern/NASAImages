@@ -42,6 +42,7 @@ final class DataAccessManager {
             case .success(let response):
                 //print("Response: \(response)")
                 if let collection = response?.imageCollection {
+// FOR DEBUGGING PURPOSES:
 //                    if collection.imageItems.count > 0 {
 //                        print(collection.imageItems[0].links?[0].href ?? "")
 //                        print(collection.imageItems[0].itemData?[0].title ?? "")
