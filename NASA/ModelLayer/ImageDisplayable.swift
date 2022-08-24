@@ -1,5 +1,5 @@
 //
-//  Displayable.swift
+//  ImageDisplayable.swift
 //  NASA
 //
 //  Created by Susan Kern on 6/5/20.

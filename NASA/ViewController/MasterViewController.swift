@@ -51,21 +51,7 @@ final class MasterViewController: UITableViewController {
         
         let item = items[indexPath.row]
         cell.titleLabel?.text = item.imageTitleLabelText
-        cell.photoImageView?.image = UIImage(named: "defaultPhoto")
-
-        // Go out and get the image from the provided link. Use system-provided global (concurrent) dispatch queue for this.
-        // Select "userInitiated" QoS to indicate that this impacts user actively using the app.
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let imageUrl = URL(string: item.imagePhotoLink),
-               let imageData:NSData = NSData(contentsOf: imageUrl),
-               let image = UIImage(data: imageData as Data) {
-                
-                // Switch back to the main dispatch queue for presentation in the UI
-                DispatchQueue.main.async {
-                    cell.photoImageView?.image = image
-                }                
-            } 
-        }
+        cell.photoImageView.loadImage(urlString: item.imagePhotoLink, placeholder: UIImage(named: "defaultPhoto"))
         
         return cell
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B15D22828B6ACCD003831B0 /* UIImageView+SAK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15D22728B6ACCD003831B0 /* UIImageView+SAK.swift */; };
 		1B32B4D0248A712800867F1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4CF248A712800867F1F /* AppDelegate.swift */; };
 		1B32B4D2248A712800867F1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4D1248A712800867F1F /* SceneDelegate.swift */; };
 		1B32B4D4248A712800867F1F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32B4D3248A712800867F1F /* MasterViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B15D22728B6ACCD003831B0 /* UIImageView+SAK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SAK.swift"; sourceTree = "<group>"; };
 		1B32B4CC248A712800867F1F /* NASA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B32B4CF248A712800867F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B32B4D1248A712800867F1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,8 +187,9 @@
 		1B75D8F928A555A00080541D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				1B75D8FE28A591950080541D /* UIView+SAK.swift */,
 				1B75D90028A59CB90080541D /* NSAttributedString+SAK.swift */,
+				1B15D22728B6ACCD003831B0 /* UIImageView+SAK.swift */,
+				1B75D8FE28A591950080541D /* UIView+SAK.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				1B32B4FC248AAE0500867F1F /* ImageModel.swift in Sources */,
 				1B32B4F5248A71C400867F1F /* ImageDisplayable.swift in Sources */,
 				1B75D8FD28A58C740080541D /* LinkModel.swift in Sources */,
+				1B15D22828B6ACCD003831B0 /* UIImageView+SAK.swift in Sources */,
 				1B75D8F228A2D2EF0080541D /* Endpoint.swift in Sources */,
 				1B32B4D6248A712800867F1F /* DetailViewController.swift in Sources */,
 			);
